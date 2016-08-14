@@ -1,0 +1,30 @@
+Rebasing from Upstream
+Do this every time prior to creating a branch for a PR:
+
+Make sure you are in the staging branch
+bash
+$ git status
+On branch staging
+Your branch is up-to-date with 'origin/staging'.
+
+If you are not on staging, resolve any outstanding files/commits and checkout staging
+git checkout staging
+Do a pull with rebase against upstream:
+git pull --rebase upstream staging
+
+This will pull down all of the changes on the official staging without making an additional commit in your local repo.
+4. (Optional) Force push your updated staging to your GitHub fork
+
+git push origin staging --force
+
+This will overwrite the staging branch on your fork.
+
+bash
+$ git push origin staging --force
+Counting objects: 99, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (38/38), 16.14 KiB | 0 bytes/s, done.
+Total 38 (delta 25), reused 0 (delta 0)
+To git@github.com:yourUserName/FreeCodeCamp.git
+f7a525c..8a2271d staging -> staging
